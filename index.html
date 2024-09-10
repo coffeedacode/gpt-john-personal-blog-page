@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: #f8f8f8; padding: 20px 0; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; }
+        nav ul { display: flex; list-style-type: none; padding: 0; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: #333; }
+        .search-icon { cursor: pointer; }
+        .hero-section { background-image: url('https://via.placeholder.com/1200x400'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; }
+        .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-content h1 { font-size: 36px; margin-bottom: 20px; }
+        .cta-button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        .main-content { display: flex; margin-top: 40px; }
+        .blog-posts { flex: 2; margin-right: 40px; }
+        .blog-post-preview { margin-bottom: 40px; }
+        .post-thumbnail { width: 100%; height: 200px; object-fit: cover; margin-bottom: 20px; }
+        .read-more { display: inline-block; background-color: #007bff; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; }
+        .sidebar { flex: 1; }
+        .sidebar > div { margin-bottom: 30px; }
+        .sidebar h3 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        .sidebar ul { list-style-type: none; padding: 0; }
+        .sidebar ul li { margin-bottom: 10px; }
+        .avatar { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; }
+        footer { background-color: #f8f8f8; padding: 40px 0; margin-top: 40px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; }
+        .social-links a { margin-left: 15px; color: #333; text-decoration: none; }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: none; }
+        @media (max-width: 768px) { .main-content, .footer-content { flex-direction: column; } .blog-posts { margin-right: 0; margin-bottom: 40px; } .social-links, .copyright { margin-top: 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">My Personal Blog</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-icon" id="searchIcon">Search</div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to My Personal Blog</h1>
+            <p>Exploring ideas, sharing experiences, and learning together.</p>
+            <button class="cta-button" id="ctaButton">Read Latest Posts</button>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <div class="blog-posts" id="blogPosts">
+            <article class="blog-post-preview">
+                <img src="https://via.placeholder.com/600x400" alt="My First Blog Post" class="post-thumbnail">
+                <h2>My First Blog Post</h2>
+                <p>This is a summary of my first blog post...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post-preview">
+                <img src="https://via.placeholder.com/600x400" alt="Exploring React Hooks" class="post-thumbnail">
+                <h2>Exploring React Hooks</h2>
+                <p>Learn about the power of React Hooks...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post-preview">
+                <img src="https://via.placeholder.com/600x400" alt="Web Design Trends 2024" class="post-thumbnail">
+                <h2>Web Design Trends 2024</h2>
+                <p>Discover the latest trends in web design...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </div>
+        <aside class="sidebar">
+            <div class="about-me">
+                <img src="https://via.placeholder.com/100" alt="Author" class="avatar">
+                <h3>About Me</h3>
+                <p>Hi, I'm a passionate blogger sharing my thoughts and experiences.</p>
+            </div>
+            <div class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#tech">Technology</a></li>
+                    <li><a href="#lifestyle">Lifestyle</a></li>
+                    <li><a href="#travel">Travel</a></li>
+                </ul>
+            </div>
+            <div class="recent-posts">
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#post1">My Latest Adventure</a></li>
+                    <li><a href="#post2">Top 5 Coding Tips</a></li>
+                    <li><a href="#post3">Book Review: The Alchemist</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="contact-info">
+                <p>Contact: example@email.com</p>
+            </div>
+            <div class="social-links">
+                <a href="#facebook">Facebook</a>
+                <a href="#twitter">Twitter</a>
+                <a href="#instagram">Instagram</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">Top</button>
+
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Search functionality
+        const searchIcon = document.getElementById('searchIcon');
+        searchIcon.addEventListener('click', () => {
+            const searchTerm = prompt('Enter search term:');
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}`);
+                // Implement actual search functionality here
+            }
+        });
+
+        // CTA Button functionality
+        const ctaButton = document.getElementById('ctaButton');
+        ctaButton.addEventListener('click', () => {
+            document.querySelector('#blogPosts').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
